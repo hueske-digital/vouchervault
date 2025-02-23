@@ -50,6 +50,10 @@ services:
       ofelia.job-exec.vouchervaultdbbackup.schedule: "0 0 1 * * *"
       ofelia.job-exec.vouchervaultdbbackup.command: "sh -c 'pg_dumpall -U vouchervault -f /var/lib/postgresql/data/backup.sql'"
 
+volumes:
+  app_data:
+  db_data:
+
 networks:
   app_database:
   app_cache:
